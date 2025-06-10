@@ -1,0 +1,161 @@
+/* Основные стили */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Затемнение фона */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+}
+
+/* Затемняющий слой */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Уровень затемнения можно регулировать (0.7) */
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.car-card {
+  display: block;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  color: rgb(20, 18, 18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.car-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.car-card img {
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Форма обратной связи */
+.feedback-section {
+  max-width: 600px;
+  margin: 2rem auto 4rem auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  color: rgb(17, 17, 17);
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #444;
+}
+
+#responseMessage {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Анимации появления */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* Задержки для последовательного появления */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+.buy-button {
+  background: #e50914;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.buy-button:hover {
+  background-color: #ff2c3d;
+}
