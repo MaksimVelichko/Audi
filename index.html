@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Audi Premium - Главная</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ <header>
+  <img src="images/logo.png" alt="Audi Logo" class="logo" />
+  <h1>Добро пожаловать в Audi Premium</h1>
+</header>
+
+  <section class="car-list">
+    <a href="audi-a8.html" class="car-card fade-in delay-1">
+      <img src="images/audi-a8.jpg" alt="Audi A8" />
+      <h2>Audi A8</h2>
+      <p>Цена: от 6 000 000 ₽</p>
+    </a>
+
+    <a href="audi-q8.html" class="car-card fade-in delay-2">
+      <img src="images/audi-q8.jpg" alt="Audi Q8" />
+      <h2>Audi Q8</h2>
+      <p>Цена: от 6 200 000 ₽</p>
+    </a>
+
+    <a href="audi-rs7.html" class="car-card fade-in delay-3">
+      <img src="images/audi-rs7.jpg" alt="Audi RS7" />
+      <h2>Audi RS7</h2>
+      <p>Цена: от 10 500 000 ₽</p>
+    </a>
+  </section>
+
+  <section class="feedback-section fade-in delay-4">
+    <h2>Обратная связь</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Ваше имя" required />
+      <input type="email" name="email" placeholder="Ваш email" required />
+      <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+      <button type="submit">Отправить</button>
+      <div id="responseMessage"></div>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const responseMessage = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Простая эмуляция отправки с задержкой
+      responseMessage.style.color = 'black';
+      responseMessage.textContent = 'Отправка...';
+
+      setTimeout(() => {
+        responseMessage.style.color = 'green';
+        responseMessage.textContent = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+        form.reset();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
